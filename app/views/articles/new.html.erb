@@ -8,7 +8,7 @@
           <%end%>
       </ul>
   <%end%>
-  
+
 <%= form_for @article do |f| %>
 <p>
   <%= f.label :title %> <br/>
@@ -22,3 +22,6 @@
 <p> <%= f.submit %> </p>
 
 <% end %>
+<p>
+  <%= link_to "Back to article lists", articles_path %>
+</p>

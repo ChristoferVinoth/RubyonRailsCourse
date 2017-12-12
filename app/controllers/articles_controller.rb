@@ -6,12 +6,21 @@ end
 def create
 #  render plain: params[:article].inspect
   @article = Article.new(article_params)
-  @article.save
-  redirect_to_article_show(@article)
+  if @article.save
+    flash[:notice] = "Article is created successfully!"
+    redirect_to articles_path(@article)
+  else
+    render 'new'
+  end
 end
 
-def article_params
-  params.require(:article).permit(:title, :description)
+def show
+  @article = Article.find(params[:id])
 end
+private
+
+  def article_params
+    params.require(:article).permit(:title, :description)
+  end
 
 end

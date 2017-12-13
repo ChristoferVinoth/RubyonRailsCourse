@@ -1,2 +1,67 @@
+$navbar-default-bg: yellow;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo{
+  float: left;
+  font-size: 1.7em;
+  color : darkblue;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo:hover{
+  color: darkblue;
+  text-decoration: none;
+}
+
+.center{
+    text-align:center;
+}
+
+.jumbotron{
+  background-image: asset-url('lamp_tree.jpg');
+  background-size: cover;
+  height: 550px;
+}
+
+.jumbotron h1{
+  color: red;
+  text-align: center;
+  text-shadow: 5px 3px black;
+  font-weight: bold;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+}
+
+.btn-xlarge{
+    font-size: 1.7em;
+    background-color: orange;
+}
+
+footer{
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid cyan;
+  color: darkblue;
+}
+
+footer a:hover{
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul{
+  float: right;
+  list-style: none;
+}
+
+footer ul li{
+  float: left;
+  margin-left: 15px;
+}

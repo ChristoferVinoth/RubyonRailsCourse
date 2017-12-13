@@ -41,10 +41,19 @@ $navbar-default-bg: yellow;
     background-color: orange;
 }
 
+.article-actions{
+  border-top: 2px solid black;
+  padding-top: 5px;
+}
+
+.description{
+  margin-top: 0;
+}
+
 footer{
   margin-top: 30px;
   padding-top: 20px;
-  border-top: 1px solid cyan;
+  border-top: 5px solid cyan;
   color: darkblue;
 }
 

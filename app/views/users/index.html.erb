@@ -1,0 +1,16 @@
+<h1 align="center"> List of Users</h1>
+<div align="center">
+  <% @users.each do |u| %>
+    <ul class="listing">
+      <div clss="row">
+        <div class="well col-md-offset-4">
+          <%= link_to gravatar_for(u), user_path(u) %>
+          <p class="article-title">
+            <%= link_to u.username, user_path(u) %>
+          </p>
+          <p><small> <%= pluralize(u.articles.count, "article") if u.articles %> </small></p>
+        </div>
+      </div>
+    </ul>
+    <% end %>
+</div>

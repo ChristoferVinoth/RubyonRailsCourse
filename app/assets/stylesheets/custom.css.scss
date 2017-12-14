@@ -19,6 +19,7 @@ $navbar-default-bg: yellow;
 
 .center{
     text-align:center;
+    align:center;
 }
 
 .jumbotron{
@@ -64,6 +65,11 @@ $navbar-default-bg: yellow;
   border-top: 1px solid black;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.listing{
+  list-style: none;
+  padding-left: 0;
 }
 
 footer{

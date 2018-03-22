@@ -1,0 +1,20 @@
+<%= form_tag articles_find_path, method: :get, id: "find-form" do %>
+    <div class="form-group row no-padding text-center col-md-12">
+      <div class="col-md-10">
+        <%= text_field_tag :user_id, params[:user_id], placeholder: "User", autofocus: true, class: "form-control search-box input-lg" %>
+      </div>
+      <div class="col-md-10">
+        <%= text_field_tag :cat_id, params[:cat_id], placeholder: "Category", autofocus: true, class: "form-control search-box input-lg" %>
+      </div>
+      <div class="col-md-2">
+        <%= button_tag(type: :submit, class: "btn btn-lg btn-success") do %>
+            <i class="fa fa-search"></i> Find articles
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+    <% if @articles %>
+
+      <%= render 'article', obj: @articles %>
+
+    <% end %>

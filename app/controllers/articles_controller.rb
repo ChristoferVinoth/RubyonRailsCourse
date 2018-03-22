@@ -3,11 +3,23 @@ class ArticlesController < ApplicationController
   before_action :require_user, except:[:index, :show]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   def index
-    @articles = Article.paginate(page: params[:page], per_page: 5)
+    @articles = Article.includes(:categories, :user).paginate(page: params[:page], per_page: 5)
   end
 
   def new
-  @article = Article.new
+    @article = Article.new
+  end
+
+def find
+  if(params[:cat_id])
+  #  @articles = Category.find(params[:cat_id]).articles.includes(:user,:categories).where(user_id: params[:user_id])
+    @articles = Article.joins(:article_categories).includes(:user,:categories).where("user_id = ? AND article_categories.category_id = ?", params[:user_id], params[:cat_id])
+    #@articles = Article.includes(:article_categories, :categories, :user).where(:article_categories => {category_id: params[:cat_id]} , user_id: params[:user_id])
+  end
+end
+
+def temp
+  @articles = Article.joins(:categories).where(user_id: params[:user_id] , category_id: params[:cat_id]).paginate(page: params[:page], per_page: 5)
 end
 
 def edit
